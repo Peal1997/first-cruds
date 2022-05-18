@@ -47,7 +47,15 @@ class StudentController extends Controller
               'name' => 'required',
               'email' => 'required|email|unique:students',
               'cell' => 'required|starts_with:01,8801,+8801|unique:students',
-          ]);
+          ],[
+
+            'name.required' => 'নামের ঘরটি পূরণ করুন',
+            'email.required' => 'ইমেইলের  ঘরটি পূরণ করুন ',
+            'cell.required' => 'সেলের ঘরটি পূরণ করুন ',
+            'email.unique' => 'ইমেইলটি নিয়ে নেওয়া হয়েছে ',
+            'cell.unique' => 'সেলটি নিয়ে নেওয়া হয়েছে',
+            'email.email' => 'ইমেইলটি সঠিক নয়',
+         ]);
          //image upload
           if($request -> hasfile('photo')) {
                  $img = $request -> file('photo');
@@ -62,7 +70,7 @@ class StudentController extends Controller
             'email' => $request -> email,
             'cell' => $request -> cell,
             'photo' => $file_name,
-         ],);
+         ]);
          //return back
          return back() -> with('success','Student created successfully');
       }
