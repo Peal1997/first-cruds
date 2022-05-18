@@ -4,11 +4,11 @@
 <div id="card" class="card shadow">
 	<div class="card-body">
 		<div class="single-user">
-			<img class="shadow-sm" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVzbthRkzI9n8S69cHuiRKKk4qNVtaEgiIA&usqp=CAU" alt="" >
-			<h2>Peal Hasan</h2>
-			<h3>hasanpeal65@gmail.com</h3>
-			<h3>01709908701</h3>
-			<a class ="btn btn-primary" href="" >Back</a>
+			<img class="shadow-sm" src="{{url('photos/' . $student -> photo )}}" alt="" >
+			<h2>{{$student -> name}}</h2>
+			<h3>{{$student -> email}}</h3>
+			<h3>{{$student -> cell}}</h3>
+			<a class ="btn btn-primary" href="{{route('student.index')}}" >Back</a>
    
 		</div>
 	</div>

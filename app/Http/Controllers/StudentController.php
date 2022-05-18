@@ -14,14 +14,20 @@ class StudentController extends Controller
 
      public function index()
      {
-         return view('index');
+         $data = student::all();
+         return view('index',[
+             'all_data' => $data,
+         ]);
      }
      /***
       * show student
       */
      public function show($id)
      {
-         return view('single');
+         $data = student::find($id);
+         return view('single',[
+              'student' => $data
+         ]);
      }
      /**
       * add a student
@@ -74,7 +80,12 @@ class StudentController extends Controller
          //return back
          return back() -> with('success','Student created successfully');
       }
-
+        public function destroy($id)
+        {
+            $data = student::find($id);
+            $data -> delete();
+            return back() -> with('success',"Data deleted");
+        }
     
 }
 

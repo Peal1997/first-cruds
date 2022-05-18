@@ -3,7 +3,7 @@
 @section('sub-title-page', 'Insert Student in our database')
 @section('main-content')
 <div class="user-form w-25 mx-auto my-5">
-    <a class="btn btn-primary" href="./user.php" >All teachers</a>
+    <a class="btn btn-primary" href="{{route('student.index')}}" >All teachers</a>
         <div class="card h-25 shadow ">
        
             <div class="card-header">

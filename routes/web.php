@@ -9,6 +9,7 @@ Route :: get('student/{id}',[StudentController::class, 'show']) -> name('student
 Route :: get('student-create',[StudentController::class, 'add']) -> name('student.add');
 Route :: get('student-edit/{id}',[StudentController::class, 'edit']) -> name('student.edit');
 Route :: post('student-store',[StudentController::class, 'store']) -> name('student.store');
+Route :: get('student-delete/{id}',[StudentController::class, 'destroy']) -> name('student.destroy');
 
 // Route :: get('student-single/{id}', function(){
 //     return view('single');
