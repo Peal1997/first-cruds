@@ -9,6 +9,6 @@ class student extends Model
 {
     use HasFactory;
 
-    protected $gurded = [];
-    protected $fillable = ['name','email','cell'];
+    protected $guarded = [];
+    
 }

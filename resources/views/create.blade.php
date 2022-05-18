@@ -10,20 +10,40 @@
                 <h1 calss ="card-title">Create teachers account</h1>
             </div>
             <div class="card-body">
+                <hr>
+                @if ($errors -> any())
+
+
+                @foreach ($errors -> all() as $err)
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <strong>{{$err}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                @endforeach
+                
+                
+                    
+                @endif
+                @if (Session::has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{Session::get('success')}}</strong>
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div> 
+                @endif
                 <form class="" action="{{route('student.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class = "form-label" for="name">Name </label>
-                        <input name="name" type ="text" id ="name" value="" class="form-control">
+                        <input name="name" type ="text" id ="name" value="{{old('name')}}" class="form-control">
                     </div>
                     <div class="form-group">
                         <label class = "form-label" for="email">Email </label>
-                        <input name="email" type ="text" id ="email" value="" class="form-control">
+                        <input name="email" type ="text" id ="email" value="{{old('email')}}" class="form-control">
                         
                     </div>
                     <div class="form-group">
                         <label class = "form-label" for="salary">Cell</label>
-                        <input name="cell" type ="text" id ="salary" value="" class="form-control">
+                        <input name="cell" type ="text" id ="salary" value="{{old('cell')}}" class="form-control">
                     </div>
                    
                     <br>
