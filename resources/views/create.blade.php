@@ -30,7 +30,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div> 
                 @endif
-                <form class="" action="{{route('student.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('student.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class = "form-label" for="name">Name </label>
